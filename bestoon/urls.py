@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 
+
+# if we open bestoon.com/admin --> admin page will display
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'admin/', admin.site.urls),
+    url(r'', include('web.urls')),
 ]
